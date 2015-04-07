@@ -1,0 +1,23 @@
+!Disable Scrolbar
+URxvt.scrollBar: false
+
+! terminal colors ------------------------------------------------------------
+
+! Green on Solid Grey
+*background: #282828
+*foreground: #00FF00
+
+! Set Font
+URxvt.font: xft:SourceCodePro-Regular:size=11
+
+!Decrease spacing between characters
+URxvt.letterSpace: -1
+
+!URL Colour blue
+URxvt.colorUL: #4682B4
+
+!Enable Clipboard
+URxvt.perl-ext-common: ...,clipboard
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
