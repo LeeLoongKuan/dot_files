@@ -222,7 +222,7 @@ focus_follows_mouse no
 # Assign clients to workspace
 assign [instance="htop"] 1: System
 assign [class="Firefox"] 2: Web
-assign [class="Emacs"] 3: Emacs
+assign [class="Emacs"] 3: Editor
 assign [instance="ncmpcpp"] 4: Music
 
 #Auto Start
