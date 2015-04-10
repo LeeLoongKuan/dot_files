@@ -4,12 +4,12 @@ URxvt.scrollBar: false
 ! terminal colors ------------------------------------------------------------
 
 ! Green on Solid Grey
-*background: #282828
-*foreground: #00FF00
+*background: #2d2d2d
+*foreground: #dddddd
 
 ! Set Font
-URxvt.font: xft:SourceCodePro-Regular:size=11
-
+URxvt.font: xft:Source Code Pro:size=11
+ 
 !Decrease spacing between characters
 URxvt.letterSpace: -1
 

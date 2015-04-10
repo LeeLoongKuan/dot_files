@@ -89,8 +89,8 @@ update_interval 0.01
 
 TEXT
 [{ "full_text" : "     ${mpd_title} - ${mpd_artist} - ${mpd_elapsed}/${mpd_length} " , "color" : "\#1793d0" },\
- { "full_text" : "     ${fs_used /} /${fs_size}   ${fs_used /mnt/windows} /${fs_size /mnt/windows} " , "color" : "\#5cd637" },\
+ { "full_text" : "     ${fs_used /} /${fs_size}" , "color" : "\#5cd637" },\
  { "full_text" : "     ${if_up wlp2s0} ${exec curl -s icanhazip.com} ${else} NOT CONNECTED ${endif}", "color" : "\#d6a676" },\
- { "full_text" : "     ${battery_percent}% ", "color" : "\#d68176" },\
+ { "full_text" : "     ${execi 60 acpi | grep -Eo '[0-9]+%'} ", "color" : "\#d68176" },\
  { "full_text" : "     ${exec ponymix get-volume}% ", "color" : "\#aa71ce" },\
  { "full_text" : "     ${time %a %m-%d-%y}    ${time %l:%M:%S %p}"}],\

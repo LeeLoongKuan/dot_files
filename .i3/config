@@ -234,3 +234,4 @@ exec exec urxvt -name htop -e htop
 exec workspace number 1
 exec exec urxvt -name ncmpcpp -e ncmpcpp
 exec firefox
+exec pcmanfm -d
