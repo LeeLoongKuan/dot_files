@@ -3,7 +3,7 @@ URxvt.scrollBar: false
 
 ! terminal colors ------------------------------------------------------------
 
-! Green on Solid Grey
+! White on Solid Grey
 *background: #2d2d2d
 *foreground: #dddddd
 
@@ -21,3 +21,4 @@ URxvt.perl-ext-common: ...,clipboard
 URxvt.keysym.M-c:   perl:clipboard:copy
 URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+
