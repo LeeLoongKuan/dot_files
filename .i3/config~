@@ -33,8 +33,8 @@ bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
 bindsym XF86AudioMute exec pulseaudio-ctl mute
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -234,3 +234,4 @@ exec exec urxvt -name htop -e htop
 exec workspace number 1
 exec exec urxvt -name ncmpcpp -e ncmpcpp
 exec firefox
+exec pcmanfm -d

@@ -33,11 +33,14 @@ bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
 bindsym XF86AudioMute exec pulseaudio-ctl mute
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+
+# Hotkey to start an emacsclient. If a emacs server does not exist, start one.
+bindsym $mod+e exec emacsclient -c -a “”
 
 #Check instance, role, and class of active window
 bindsym --release $mod+F1 exec --no-startup-id bash ~/.bin/xprop_notify
@@ -105,7 +108,7 @@ bindsym $mod+f fullscreen
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -222,7 +225,7 @@ focus_follows_mouse no
 # Assign clients to workspace
 assign [instance="htop"] 1: System
 assign [class="Firefox"] 2: Web
-assign [class="Emacs"] 3: Editor
+# assign [class="Emacs"] 3: Editor
 assign [instance="ncmpcpp"] 4: Music
 
 #Auto Start
@@ -231,6 +234,7 @@ exec feh --bg-center ~/.i3/backgrounds/blankNumix.png
 exec mpd
 exec xscreensaver -nosplash
 exec exec urxvt -name htop -e htop
+exec emacs --daemon
 exec workspace number 1
 exec exec urxvt -name ncmpcpp -e ncmpcpp
 exec firefox
