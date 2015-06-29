@@ -99,7 +99,6 @@ nnoremap <leader>s :mksessrion<CR>
 " Pathogen is a package manager which extracts plugins from ~/.vim/bundles to
 " their prper locations in ~/.vim
 call pathogen#infect()                      " Use pathogen
-call pathogen#runtime_append_all_bundles()  " Use pathogen
 
 " ================ General Config ====================
 
