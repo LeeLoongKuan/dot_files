@@ -37,7 +37,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvtc
 
 # Hotkey to start an emacsclient. If a emacs server does not exist, start one.
 bindsym $mod+e exec emacsclient -c -a “”
@@ -232,10 +232,10 @@ assign [instance="ncmpcpp"] 4: Music
 exec compton -CGcz
 exec feh --bg-center ~/.i3/backgrounds/blankNumix.png
 exec mpd
+exec urxvtd
 exec xscreensaver -nosplash
-exec exec urxvt -name htop -e htop
 exec emacs --daemon
 exec workspace number 1
-exec exec urxvt -name ncmpcpp -e ncmpcpp
+exec exec urxvtc -name ncmpcpp -e ncmpcpp
 exec firefox
 exec pcmanfm -d
