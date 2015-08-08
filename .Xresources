@@ -22,3 +22,5 @@ URxvt.keysym.M-c:   perl:clipboard:copy
 URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
+!Fix w3m and ranger not being able to display images
+URxvt.depth: 32

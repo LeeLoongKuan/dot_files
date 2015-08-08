@@ -228,6 +228,9 @@ assign [class="Firefox"] 2: Web
 # assign [class="Emacs"] 3: Editor
 assign [instance="ncmpcpp"] 4: Music
 
+# Force certain apps to launch as a floating window
+for_window [class="MuPDF"]floating enable, border normal
+
 #Auto Start
 exec compton -CGcz
 exec feh --bg-center ~/.i3/backgrounds/blankNumix.png
