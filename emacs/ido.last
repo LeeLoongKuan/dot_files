@@ -1,0 +1,65 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/loongkuan/.emacs.d/user-elisp/" . "languages/")
+ ("/home/loongkuan/Code/Haskell/" . "hello_world/")
+ ("/home/loongkuan/.emacs.d/" . "user-elisp/")
+ ("/home/loongkuan/" . "Code/")
+ ("/home/loongkuan/Code/Concept Drift Research/Final Report/" . "tex/")
+ ("/home/loongkuan/Code/Concept Drift Research/" . "Final Report/")
+ ("/home/loongkuan/Code/" . "Haskell/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/loongkuan/Code/Haskell/hello_world/"
+ "/home/loongkuan/.emacs.d/user-elisp/languages/"
+ "/home/loongkuan/Code/Concept Drift Research/Final Report/tex/"
+ "/home/loongkuan/Code/Concept Drift Research/Final Report/"
+ "/home/loongkuan/.emacs.d/"
+ "/home/loongkuan/.emacs.d/user-elisp/"
+ "/home/loongkuan/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "Main.hs"
+ "init-haskell.el"
+ "experiment_creation.tex"
+ "grid_graphs.tex"
+ "single_graph_design.tex"
+ "specification.tex"
+ "design.tex"
+ "aim.tex"
+ "motivation.tex"
+ "references.bib"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/loongkuan/Code/Haskell/hello_world/" (22137 53403 827179 100000) "Setup.hs" "Main.o" "Main.hs~" "Main.hs" "Main.hi" "Main" "LICENSE" "hello-world.cabal" "dist/" "../" "./")
+
+ ("/home/loongkuan/Code/" (22062 45934 666014 100000) "Mark-It.zip" "Haskell/" "Concept Drift Research/" "../" "./")
+
+ ("/home/loongkuan/" (22137 52556 474399 581000) ".wine/" ".emacs.d/" "sql_out" "./" ".dropbox/" ".gitignore.d/" ".zshrc" "hpscan001.png" ".pulse-cookie" ".java/" ".gitconfig" ".adobe/" ".IntelliJIdea14/" ".ipython/" ".steampid" "Logical.pdf" ".IdeaIC14/" ".fehbg" ".local/" ".ghci" ".cache/" ".ghc/" ".Xresources.d/" ".ynab4/" ".subversion/" ".steam/" ".pentadactyl/" ".zshenv" ".gnupg/" "Sync/" ".Xauthority" "external_monitor_xrandr" "Dropbox/" "datamodeler.log" "Code/" ".python_history" ".onedrive/" "Games/" ".vim/" "Downloads/" "Music/" ".gitmodules.d/" ".PyCharm40/" "Documents/" ".dwarffortress/" ".i3_bak/" "scratch/" ".config/" "2015-10-20-194432_3840x1080_scrot.png" ".mono/" ".esd_auth" ".lyrics/" ".pki/" ".gnome/" "Lab10.zip" ".bash_history" ".thumbnails/" "steam_recovery.txt" ".viminfo" ".cabal/" ".ncmpcpp/" ".xinitrc" ".ssh/" ".conkyrc" ".Xresources" "Pictures/" ".i3/" ".klei/" ".vimrc" ".steampath" ".hplip/" ".nv/" ".mozilla/" "Desktop/" "sqldeveloper/" ".macromedia/" "OneDrive/" ".sqldeveloper/" ".mrconfig" ".zsh/" ".gimp-2.8/" "sql_out2" ".urxvt/" "../")
+
+ ("/home/loongkuan/.emacs.d/user-elisp/languages/" (22061 65194 364822 978000) "./" "init-org.el" "init-python.el" "init-cpp.el" "init-haskell.el~" "init-latex.el" "#init-java.el#" "init-haskell.el" "init-java.el" "init-python.el~" "../")
+
+ ("/home/loongkuan/.emacs.d/" (22062 272 733685 116000) "auto-save-list/" "./" "ido.last~" "ido.last" "ede-projects.el" "url/" "init.el" "snippets/" "user-elisp/" "init.el~" "elpa/" "../")
+
+ ("/home/loongkuan/.emacs.d/user-elisp/" (22059 2912 310623 848000) "./" "init-ui.el~" "init-ui.el" "init-latex.el" "init-autocomplete.el" "init-editor.el" "init-packages.el" "languages/" "init-packages.el~" "init-editor.el~" "mail.el" "init-flycheck.el" "powerline-lk-theme.el" "#init-ide.el#" "init-ide.el" "spellcheck.el" "../")
+
+ ("/home/loongkuan/Code/Haskell/" (22061 63286 129861 0) "hello_world/" "haskell-docs/" "ghci-ng/" "../" "./")
+
+ ("/home/loongkuan/Code/Concept Drift Research/Final Report/tex/" (22051 22378 583324 800000) "tools.tex" "timeline.tex" "timeline.log" "timeline.bak" "testing.tex" "specification.tex~" "specification.tex" "single_graph_design.tex~" "single_graph_design.tex" "motivation.tex~" "motivation.tex" "implementation.tex" "grid_graphs.tex~" "grid_graphs.tex" "design.tex" "background.tex~" "background.tex" "auto/" "aim.tex~" "aim.tex" "abstract.tex~" "abstract.tex" "../" "./")
+
+ ("/home/loongkuan/Code/Concept Drift Research/Final Report/" (22051 22353 595077 500000) "tex/" "sty/" "references.bib~" "references.bib" "outline.org" "img/" "Final_Report.toc" "Final_Report.tex~" "Final_Report.tex" "Final_Report.pdf" "Final_Report.log" "Final_Report.blg" "Final_Report.bbl" "Final_Report.aux" "auto/" "../" "./")
+
+ ("/home/loongkuan/Code/Concept Drift Research/" (22049 57544 785944 800000) "Workbook.org" "Project_Specification/" "presentation.odt" "presentation/" "Papers/" "Final Report/" "Experiments/" "Classifiers_To_Test.org" "cande/" ".gitmodules" ".gitignore" ".git/" "../" "./")
+
+ ("/home/" (22037 14790 274325 828000) "./" "loongkuan/" "../")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

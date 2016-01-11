@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: article
+# key: arttemp
+# group: templates
+# --
+\documentclass{article}
+
+\usepackage[${1:english}]{babel}
+
+\title{${2:Title}}
+\author{${3:Author}}
+
+\begin{document}
+
+\maketitle
+
+$0
+
+\end{document}
