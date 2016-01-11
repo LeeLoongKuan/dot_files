@@ -1,1 +1,0 @@
-/home/loongkuan/.zprezto/runcoms/zshrc
