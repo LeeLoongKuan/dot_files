@@ -1,0 +1,1 @@
+/home/loongkuan/.zsh//runcoms/zlogin
