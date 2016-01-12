@@ -45,3 +45,9 @@ echo "Backing up old i3 configuration..."
 mv ~/.i3 $OLDDOTDIR/i3
 echo "Installing i3 configuration..."
 ln -s $DOTDIR/i3 ~/.i3
+
+# Install termite configuration
+echo "Backing up old termite configuration..."
+mv ~/.config/termite $OLDDOTDIR/termite
+echo "Installing termite configuration..."
+ln -s $DOTDIR/termite ~/.config/termite
