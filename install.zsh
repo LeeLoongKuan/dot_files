@@ -39,3 +39,9 @@ echo "Installing vim configuration..."
 ln -s $DOTDIR/vim ~/.vim
 ln -s $DOTDIR/vim/vimrc ~/.vimrc
 echo "done..."
+
+# Install i3 configuration
+echo "Backing up old i3 configuration..."
+mv ~/.i3 $OLDDOTDIR/i3
+echo "Installing i3 configuration..."
+ln -s $DOTDIR/i3 ~/.i3
