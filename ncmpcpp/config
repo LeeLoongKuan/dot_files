@@ -7,11 +7,11 @@
 #
 ## set it in order to make tag editor and renaming files work properly
 #
-#mpd_host = "localhost"
+mpd_host = "localhost"
 #
-#mpd_port = "6600"
+mpd_port = "6600"
 #
-mpd_music_dir = ""
+mpd_music_dir = "~/Music/Songs"
 
 mpd_connection_timeout = "5"
 
@@ -72,8 +72,6 @@ playlist_disable_highlight_delay = "0"
 song_list_format = "{(%l) }{%a - }{%t}|{%f}"
 
 song_library_format = "{%n - }{%t}|{%f}"
-
-tag_editor_album_format = "{(%y) }%b"
 
 browser_playlist_prefix = "playlist "
 
