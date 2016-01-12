@@ -1,10 +1,11 @@
 #!/bin/zsh
 
 # Directory of dotfiles
-export DOTDIR="${HOME}/dotfies"
+DOTDIR=~/dotfiles
 
 # Install zsh
-export ZDOTDIR="${DOTDIR}/zsh"
+echo "Installing zsh configuration..."
+export ZDOTDIR=$DOTDIR/zsh
 
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/runcoms/^README.md(.N); do
@@ -12,8 +13,14 @@ for rcfile in "${ZDOTDIR:-$HOME}"/runcoms/^README.md(.N); do
   done
 
 ln -s "${ZDOTDIR:-$HOME}"/runcoms/zshenv "${HOME}"/.zshenv
+echo "done..."
 
-#Instal emacs
-export EMACSDIR="${DOTDIR}/emacs"
+# Instal emacs
+echo "Installing emacs configuration..."
+ln -s $DOTDIR/emacs $HOME/.emacs.d
+echo "done..."
 
-ln -s "${DOTDIR}/emacs" "${HOME}/.emacs.d"
+# Install ncmpcpp
+echo "Installing ncmpcpp configuration..."
+ln -s $DOTDIR/ncmpcpp/config ~/.ncmpcpp/config
+echo "done..."
