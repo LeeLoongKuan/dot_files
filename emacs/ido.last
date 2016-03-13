@@ -2,10 +2,11 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/loongkuan/dotfiles/emacs/" . "user-elisp/")
  ("/home/loongkuan/.emacs.d/user-elisp/" . "languages/")
  ("/home/loongkuan/Code/Haskell/" . "hello_world/")
  ("/home/loongkuan/.emacs.d/" . "user-elisp/")
- ("/home/loongkuan/" . "Code/")
+ ("/home/loongkuan/" . ".emacs.d/")
  ("/home/loongkuan/Code/Concept Drift Research/Final Report/" . "tex/")
  ("/home/loongkuan/Code/Concept Drift Research/" . "Final Report/")
  ("/home/loongkuan/Code/" . "Haskell/")
@@ -13,17 +14,22 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/loongkuan/dotfiles/emacs/"
+ "/home/loongkuan/.emacs.d/user-elisp/"
+ "/home/loongkuan/"
+ "/home/loongkuan/dotfiles/emacs/user-elisp/"
+ "/home/loongkuan/.emacs.d/"
  "/home/loongkuan/Code/Haskell/hello_world/"
  "/home/loongkuan/.emacs.d/user-elisp/languages/"
  "/home/loongkuan/Code/Concept Drift Research/Final Report/tex/"
  "/home/loongkuan/Code/Concept Drift Research/Final Report/"
- "/home/loongkuan/.emacs.d/"
- "/home/loongkuan/.emacs.d/user-elisp/"
- "/home/loongkuan/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "init.el"
+ "mail.el"
+ ".mbsyncrc"
  "Main.hs"
  "init-haskell.el"
  "experiment_creation.tex"
@@ -31,24 +37,27 @@
  "single_graph_design.tex"
  "specification.tex"
  "design.tex"
- "aim.tex"
- "motivation.tex"
- "references.bib"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/loongkuan/dotfiles/emacs/user-elisp/" (22210 23592 686815 567000) "./" "init-ui.el~" "init-ui.el" "init-latex.el" "init-autocomplete.el" "init-editor.el" "init-packages.el" "languages/" "init-packages.el~" "init-editor.el~" "mail.el" "init-flycheck.el" "powerline-lk-theme.el" "#init-ide.el#" "init-ide.el" "spellcheck.el" "../")
+
+ ("/home/loongkuan/.emacs.d/user-elisp/" (22210 23592 686815 567000) "./" "init-ui.el~" "init-ui.el" "init-latex.el" "init-autocomplete.el" "init-editor.el" "init-packages.el" "languages/" "init-packages.el~" "init-editor.el~" "mail.el" "init-flycheck.el" "powerline-lk-theme.el" "#init-ide.el#" "init-ide.el" "spellcheck.el" "../")
+
+ ("/home/loongkuan/.emacs.d/" (22210 18606 323436 878000) "auto-save-list/" "./" "ido.last" "ede-projects.el" "url/" "init.el" "snippets/" "user-elisp/" "elpa/" "../")
+
+ ("/home/loongkuan/" (22210 19656 83446 426000) ".wine/" ".emacs.d/" "sql_out" "./" ".dropbox/" ".gitignore.d/" ".zshrc" "hpscan001.png" ".pulse-cookie" ".java/" ".gitconfig" ".adobe/" ".IntelliJIdea14/" ".ipython/" ".steampid" "Logical.pdf" ".IdeaIC14/" ".fehbg" "Mail/" "dotfiles/" "q" ".IntelliJIdea15/" ".local/" ".ghci" ".cache/" ".ghc/" ".Xresources.d/" ".ynab4/" ".subversion/" ".steam/" ".pentadactyl/" ".zshenv" ".gnupg/" "old_dotfiles/" "Sync/" ".Xauthority" ".w3m/" "external_monitor_xrandr" "Dropbox/" "FiraxisLive/" "datamodeler.log" "Code/" ".python_history" ".onedrive/" "Games/" ".vim/" "Videos/" "Downloads/" "Music/" ".gitmodules.d/" ".mbsyncrc~" ".stepmania-5.0/" ".PyCharm40/" "Documents/" ".mbsyncrc" "coverage-error.log" ".dwarffortress/" ".viminfo.tmp" ".i3_bak/" "scratch/" ".config/" "2015-10-20-194432_3840x1080_scrot.png" ".mono/" ".secrets/" ".esd_auth" ".lyrics/" ".pki/" ".gnome/" "Lab10.zip" ".bash_history" ".thumbnails/" ".cert/" ".viminfz.tmp" ".mu/" "steam_recovery.txt" ".viminfo" ".cabal/" ".ncmpcpp/" ".xinitrc" ".ssh/" ".conkyrc" ".Xresources" "Pictures/" ".i3/" ".klei/" ".vimrc" ".steampath" ".hplip/" ".nv/" ".mozilla/" "Desktop/" "sqldeveloper/" ".macromedia/" "OneDrive/" ".sqldeveloper/" ".mrconfig" ".zsh/" ".gimp-2.8/" "sql_out2" ".urxvt/" "../")
+
+ ("/home/loongkuan/dotfiles/" (22164 60911 922543 996000) "./" "README.md" "install.zsh" "update.zsh" "zsh/" "emacs/" ".gitmodules" ".git/" "scripts/" "ncmpcpp/" "termite/" "i3/" ".gitignore" "../" "vim/")
+
+ ("/home/loongkuan/dotfiles/emacs/" (22210 18606 323436 878000) "auto-save-list/" "./" "ido.last" "ede-projects.el" "url/" "init.el" "snippets/" "user-elisp/" "elpa/" "../")
+
  ("/home/loongkuan/Code/Haskell/hello_world/" (22137 53403 827179 100000) "Setup.hs" "Main.o" "Main.hs~" "Main.hs" "Main.hi" "Main" "LICENSE" "hello-world.cabal" "dist/" "../" "./")
 
  ("/home/loongkuan/Code/" (22062 45934 666014 100000) "Mark-It.zip" "Haskell/" "Concept Drift Research/" "../" "./")
 
- ("/home/loongkuan/" (22137 52556 474399 581000) ".wine/" ".emacs.d/" "sql_out" "./" ".dropbox/" ".gitignore.d/" ".zshrc" "hpscan001.png" ".pulse-cookie" ".java/" ".gitconfig" ".adobe/" ".IntelliJIdea14/" ".ipython/" ".steampid" "Logical.pdf" ".IdeaIC14/" ".fehbg" ".local/" ".ghci" ".cache/" ".ghc/" ".Xresources.d/" ".ynab4/" ".subversion/" ".steam/" ".pentadactyl/" ".zshenv" ".gnupg/" "Sync/" ".Xauthority" "external_monitor_xrandr" "Dropbox/" "datamodeler.log" "Code/" ".python_history" ".onedrive/" "Games/" ".vim/" "Downloads/" "Music/" ".gitmodules.d/" ".PyCharm40/" "Documents/" ".dwarffortress/" ".i3_bak/" "scratch/" ".config/" "2015-10-20-194432_3840x1080_scrot.png" ".mono/" ".esd_auth" ".lyrics/" ".pki/" ".gnome/" "Lab10.zip" ".bash_history" ".thumbnails/" "steam_recovery.txt" ".viminfo" ".cabal/" ".ncmpcpp/" ".xinitrc" ".ssh/" ".conkyrc" ".Xresources" "Pictures/" ".i3/" ".klei/" ".vimrc" ".steampath" ".hplip/" ".nv/" ".mozilla/" "Desktop/" "sqldeveloper/" ".macromedia/" "OneDrive/" ".sqldeveloper/" ".mrconfig" ".zsh/" ".gimp-2.8/" "sql_out2" ".urxvt/" "../")
-
  ("/home/loongkuan/.emacs.d/user-elisp/languages/" (22061 65194 364822 978000) "./" "init-org.el" "init-python.el" "init-cpp.el" "init-haskell.el~" "init-latex.el" "#init-java.el#" "init-haskell.el" "init-java.el" "init-python.el~" "../")
-
- ("/home/loongkuan/.emacs.d/" (22062 272 733685 116000) "auto-save-list/" "./" "ido.last~" "ido.last" "ede-projects.el" "url/" "init.el" "snippets/" "user-elisp/" "init.el~" "elpa/" "../")
-
- ("/home/loongkuan/.emacs.d/user-elisp/" (22059 2912 310623 848000) "./" "init-ui.el~" "init-ui.el" "init-latex.el" "init-autocomplete.el" "init-editor.el" "init-packages.el" "languages/" "init-packages.el~" "init-editor.el~" "mail.el" "init-flycheck.el" "powerline-lk-theme.el" "#init-ide.el#" "init-ide.el" "spellcheck.el" "../")
 
  ("/home/loongkuan/Code/Haskell/" (22061 63286 129861 0) "hello_world/" "haskell-docs/" "ghci-ng/" "../" "./")
 

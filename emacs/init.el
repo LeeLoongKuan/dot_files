@@ -61,7 +61,7 @@
 (load "init-ide")
 (load "init-autocomplete")
 (load "spellcheck")
-;(load "mail")
+(load "mail")
 (load "languages/init-cpp")
 (load "languages/init-python")
 (load "languages/init-latex")

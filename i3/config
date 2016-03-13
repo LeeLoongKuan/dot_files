@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-exec xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1
+exec xrandr --output eDP1 --auto --output HDMI2 --auto --left-of eDP1
 
 set $mod Mod4
 set $mpdmod Mod4+Control
