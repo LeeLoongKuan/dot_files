@@ -52,6 +52,12 @@ echo "Installing i3 configuration..."
 ln -s $DOTDIR/i3 ~/.i3
 ln -s $DOTDIR/i3/conkyrc ~/.conkyrc
 
+# Install xmonad configuration
+echo "Backing up old xmonad configuration..."
+mv ~/.xmonad $OLDDOTDIR/xmonad
+echo "Installing i3 configuration..."
+ln -s $DOTDIR/xmonad ~/.xmonad
+
 # Install termite configuration
 echo "Backing up old termite configuration..."
 mv ~/.config/termite $OLDDOTDIR/termite
