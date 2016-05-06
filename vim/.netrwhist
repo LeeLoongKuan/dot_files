@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/loongkuan/Documents/School/Year 1 Semester 1/FIT1029/Assignment/FIT 1029 Assignment 2 - Lee Loong Kuan'
-let g:netrw_dirhist_2='/etc/modules-load.d'
-let g:netrw_dirhist_3='/home/loongkuan/.zprezto'
-let g:netrw_dirhist_4='/home/loongkuan/.gitignore.d'
-let g:netrw_dirhist_5='/mnt/data/loongkuan/Code/Concept Drift/DriftMagApprox/.git'
