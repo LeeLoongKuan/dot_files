@@ -6,7 +6,8 @@ font = Hack 11
 foreground      = #dddddd
 foreground_bold = #dddddd
 cursor          = #dddddd
-background      = #2d2d2d
+background = rgba(45, 45, 45, 0.95)
+#background      = #2d2d2d
 
 # black
 color0  = #555555
