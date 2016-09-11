@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "shm" "shm.el" (22208 6358 849355 284000))
+;;;### (autoloads nil "shm" "shm.el" (22304 29131 480893 616000))
 ;;; Generated autoloads from shm.el
 
 (autoload 'structured-haskell-mode "shm" "\
@@ -22,8 +22,8 @@ Structured editing for Haskell.
 ;;;;;;  "shm-layout.el" "shm-macros.el" "shm-manipulation.el" "shm-nav.el"
 ;;;;;;  "shm-node.el" "shm-overlays.el" "shm-pkg.el" "shm-reformat.el"
 ;;;;;;  "shm-simple-indent.el" "shm-slot.el" "shm-stack.el" "shm-test.el"
-;;;;;;  "shm-tests.el" "shm-type.el" "shm-yank-kill.el") (22208 6359
-;;;;;;  38056 807000))
+;;;;;;  "shm-tests.el" "shm-type.el" "shm-yank-kill.el") (22304 29131
+;;;;;;  550809 255000))
 
 ;;;***
 

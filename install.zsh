@@ -27,6 +27,7 @@ echo "Backing up old emacs configuration..."
 mv ~/.emacs.d $OLDDOTDIR/emacs
 echo "Installing emacs configuration..."
 ln -s $DOTDIR/emacs ~/.emacs.d
+ln -s $DOTDIR/spacemacs ~/.spacemacs
 
 # Install ncmpcpp
 echo "Backing up old ncmpcpp configuration..."
