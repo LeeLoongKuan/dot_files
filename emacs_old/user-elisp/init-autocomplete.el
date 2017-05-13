@@ -21,8 +21,7 @@
 ;; Start yasnippet (template completion) and load snippets
 (require 'yasnippet)
 (setq yas-snippet-dirs
-      '("~/.emacs.d/snippets"                                ; personal snippets
-	"~/.emacs.d/elpa/yasnippet/snippets"    ; Default Snippets
+      '("~/.emacs.d/snippets"                   ; personal snippets
         ))
 (yas-global-mode 1)
  

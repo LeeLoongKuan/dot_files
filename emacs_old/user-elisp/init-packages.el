@@ -8,7 +8,7 @@
 ;;; Code:
 ;; Load emacs package manager and package repositories
 (require 'package)
-(dolist (source '(("marmalade" . "http://marmalade-repo.org/packages/")
+(dolist (source '(
                   ("elpa" . "http://tromey.com/elpa/")
                   ("melpa" . "http://melpa.milkbox.net/packages/")
 		  ("melpa-stable" . "http://stable.melpa.org/packages/")

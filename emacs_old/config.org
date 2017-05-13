@@ -1,0 +1,264 @@
+#+TITLE Loong Kuan's Emacs Configuration
+
+* TODOs
+** TODO Install Packages if Missing
+
+* Configuration
+** Initialisation :active:
+No need to set up load paths to pakages 
+so variables and functions from packages are available 
+to use in config since we are using 
+=use-package=.
+#+BEGIN_SRC emacs-lisp :tangle yes
+    (message "initialisating config...")
+    (add-to-list 'load-path "~/.emacs.d/user-elisp/")
+    (package-initialize nil)
+#+END_SRC
+
+*** Emacs Package Repositories
+Add repositories to the list of available =ELPA= repositories, 
+=package-archives= and set their priorities.
+#+BEGIN_SRC emacs-lisp :tangle yes
+(require 'package)
+(package-initialize)
+(setq package-archives '())
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/"))
+(setq package-archive-priorities '(("org" . 4)
+                                   ("melpa-stable" . 3)
+                                   ("melpa" . 2)
+                                   ("gnu" . 1)))
+(add-to-list 'package-pinned-packages
+             '(use-package . "melpa-stable"))
+#+END_SRC
+
+*** =use-package=
+Use custom package [[=use-package=][https://github.com/jwiegley/use-package]] 
+to make configuration neater and install packages not 
+currently installed on machine.
+#+BEGIN_SRC emacs-lisp :tangle yes
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(setq use-package-verbose t)
+(eval-when-compile
+  (require 'use-package))
+;; if you use :diminish
+(require 'diminish)
+;; if you use any :bind variant
+(require 'bind-key)
+(setq use-package-always-ensure t)
+#+END_SRC
+
+
+** Helper Functions
+*** Emacs Server Management Function:active:
+ Here we define a few custom functions 
+ to help manage the emacs server.
+**** =server-shutdown=
+ #+BEGIN_SRC emacs-lisp :tangle yes
+ (defun server-shutdown ()
+   "Save buffers, Quit, and Shutdown (kill) server"
+   (interactive)
+   (save-some-buffers)
+   (kill-emacs)
+ )
+ #+END_SRC
+
+*** Evaluate Config
+#+BEGIN_SRC emacs-lisp :tangle yes
+(global-set-key (kbd "C-; r") 
+'(load-file "~/.emacs.d/init.el"))
+#+END_SRC
+
+
+** User Interface
+*** Disable useless ui elements
+#+BEGIN_SRC emacs-lisp :tangle yes
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+#+END_SRC
+*** Colour Theme
+#+BEGIN_SRC emacs-lisp :tangle yes
+(setq color-theme-is-global t)
+(load-theme 'ample t)
+#+END_SRC
+*** Resizing Windows
+#+BEGIN_SRC emacs-lisp :tangle yes
+(global-set-key (kbd "<C-M-up>") 'shrink-window)
+(global-set-key (kbd "<C-M-down>") 'enlarge-window)
+(global-set-key (kbd "<C-M-left>") 
+                'shrink-window-horizontally)
+(global-set-key (kbd "<C-M-right>") 
+                'enlarge-window-horizontally)
+#+END_SRC
+*** Powerline
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package powerline
+  :config
+  (use-package powerline-evil)
+  (load "powerline-lk-theme")
+  (powerline-lk-theme)
+  (setq minimap-window-location 'right)
+  (setq minimap-buffer-name '"*MM*")
+  (setq minimap-hide-fringes 't)
+  (setq minimap-dedicated-window 't)
+  (setq minimap-mode 'nil))
+#+END_SRC
+
+  
+   
+** Editor :active:
+The configurations here deal with 
+how the text editing in emacs behave 
+and how the text editor looks like.
+*** EVIL Mode (Vim Emulator)
+Configure the vim emulator
+**** Initialisation
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package evil
+  :config
+  (evil-mode 1)
+  (setq-default evil-cross-lines t)
+  ;; Disable word-wrapping and 
+  ;;operate by logical-lines not visual-lines
+  (global-visual-line-mode 1))
+#+END_SRC
+
+*** Fill Column
+Set the fill column width to 60.
+#+BEGIN_SRC emacs-lisp :tangle yes
+(setq-default fill-column 60)
+#+END_SRC
+Configure indicator of where the fill column is at.
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package fill-column-indicator
+  :config
+  (setq fci-rule-width 1)
+  (setq fci-rule-color "white"))
+#+END_SRC
+We will need to call =fci-mode= for the hooks of 
+the major modes
+that we want the fill column indicator to appear in.
+*** Relative Line Numbers
+#+BEGIN_SRC emacs-lisp :tangle yes
+(global-linum-mode 1)
+(column-number-mode 1)
+(use-package linum-relative
+  :config
+  (linum-relative-on)
+  (setq linum-relative-current-symbol ""))
+#+END_SRC
+*** Delimiter Handling
+Delimiter matching and automcompletion of delimiters.
+(ex:(),{},[]).
+#+BEGIN_SRC emacs-lisp :tangle yes
+; Delimiter matching
+(electric-pair-mode 1)
+; turn on paren match highlighting
+(show-paren-mode 1)
+; highlight entire bracket expression
+(setq show-paren-style 'expression)
+#+END_SRC
+*** Tab Behviour
+Use spaces instead of tabs and 
+set tab spaces created by pressing TAB 
+to be the sequence of numberes from 4 to 120 
+with increments of 4 (eg: 4, 8, 12, \ldots).
+Also display any <TAB> character as 4 spaces.
+#+BEGIN_SRC emacs-lisp :tangle true
+(setq-default indent-tabs-mode nil)
+(setq tab-stop-list (number-sequence 4 120 4))
+(setq tab-width 4)
+#+END_SRC
+*** Highlights
+Highlight the line currentlt being edited.
+Also highlight indentation.
+#+BEGIN_SRC emacs-lisp :tangle true
+(global-hl-line-mode 1)
+(use-package highlight-indentation)
+#+END_SRC
+*** Undo
+Use a better undo function using the package =undo-tree=.
+#+BEGIN_SRC emacs-lisp :tangle true
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode 1))
+#+END_SRC
+
+
+** =ivy=
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package ivy
+  :bind (("C-x C-f" . counsel-find-file)
+         ("M-x" . counsel-M-x))
+  :config
+  (use-package counsel)
+  (use-package swiper)
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  (setq ivy-count-format "(%d/%d) ")
+)
+#+END_SRC
+
+
+** =company=
+Company is a text completion framework for Emacs. 
+The name stands for "complete anything". 
+It uses pluggable back-ends and front-ends 
+to retrieve and display completion candidates.
+[[=company=][http://company-mode.github.io/]]
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package company
+  :bind (("C-; c" . company-complete))
+  :config
+  (global-company-mode)
+)
+#+END_SRC
+
+
+** =which-key=
+=which=key= is a tool that shows the possible commands 
+available as keybindings while pressing keybindings.
+[[=which-key=][https://github.com/justbur/emacs-which-key]] .
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package which-key
+  :config
+  (setq which-key-popup-type 'minibuffer)
+  (which-key-mode)
+)
+#+END_SRC
+
+
+** Languages
+*** Orgmode
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package org
+  :init
+  (add-hook 'org-mode-hook 'fci-mode)
+  :config
+  (setq org-log-done 'time))
+#+END_SRC
+*** Javascript
+:PROPERTIES:
+:NAME: javascript
+:DEPENDS: company
+:END:
+#+BEGIN_SRC emacs-lisp :tangle yes
+(use-package company-tern
+  :init
+  (add-hook 'org-mode-hook 'fci-mode)
+  (add-hook 'js-mode-hook 'tern-mode)
+  :config
+  (add-to-list 'company-backends 'company-tern)
+  (progn
+    (use-package tern-auto-complete)
+    (tern-ac-setup))
+)
+#+END_SRC
+

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org_src_elisp
+# key: elisp
+# group: templates
+# --
+#+BEGIN_SRC emacs-lisp :tangle yes
+#+END_SRC

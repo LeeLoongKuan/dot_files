@@ -2,10 +2,29 @@
 
 
 ;;; Commentary:
-;; This file contains the custom set variables created by emacs itself and then calls the elisp files in user-elisp
+;; This file contains the custom set variables created by Emacs itself and then calls the elisp files in user-elisp
 
 
 ;;; Code:
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+
+;; Load org config
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
+(require 'org)
+(require 'ob-tangle)
+;(message "hello pre")
+(org-babel-load-file "~/.emacs.d/config.org")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -15,8 +34,8 @@
  '(company-backends
    (quote
     (company-emacs-eclim company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf
-                         (company-dabbrev-code company-gtags company-etags company-keywords)
-                         company-oddmuse company-files company-dabbrev)))
+			 (company-dabbrev-code company-gtags company-etags company-keywords)
+			 company-oddmuse company-files company-dabbrev)))
  '(company-frontends
    (quote
     (company-pseudo-tooltip-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend)))
@@ -29,10 +48,14 @@
  '(eclim-executable "/usr/lib/eclipse/eclim")
  '(ede-project-directories (quote ("/home/loongkuan/Code/Java/HelloWorld")))
  '(ispell-local-dictionary "en_AU")
+ '(package-selected-packages
+   (quote
+    (counsel ivy which-key helm-config emacs-async helm tern-auto-complete use-package org-dotemacs company-tern shm powerline-evil pabbrev monokai-theme minimap magit linum-relative latex-preview-pane jedi iedit idomenu hindent hi2 haskell-mode flycheck fill-column-indicator emacs-eclim elpy dired+ color-theme-wombat autopair auto-dictionary auto-complete-c-headers auto-complete-auctex auctex ample-theme ac-ispell)))
  '(powerline-default-separator (quote arrow))
  '(show-paren-mode t)
  '(sublimity-mode nil)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(which-key-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -54,20 +77,19 @@
 ;; Load user config/elisp files
 (add-to-list 'load-path "~/.emacs.d/user-elisp/")
 (load "init-packages")
-(load "init-ui")
-(load "init-editor")
+;(load "init-ui")
+;(load "init-editor")
 (load "init-flycheck")
 (load "init-latex")
 (load "init-ide")
 (load "init-autocomplete")
 (load "spellcheck")
-(load "mail")
-(load "languages/init-cpp")
-(load "languages/init-python")
-(load "languages/init-latex")
-(load "languages/init-haskell")
-(load "languages/init-org")
-(load "languages/init-java")
+;(load "languages/init-cpp")
+;(load "languages/init-python")
+;(load "languages/init-latex")
+;(load "languages/init-haskell")
+;(load "languages/init-org")
+;(load "languages/init-java")
 
 ;; Load internet elisp files
 (add-to-list 'load-path "~/.emacs.d/elisp/")
