@@ -1,0 +1,6 @@
+# key: latex
+# name: org-latex
+# --
+
+#+BEGIN_EXPORT latex
+#+END_EXPORT
