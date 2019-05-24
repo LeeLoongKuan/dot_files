@@ -1,1 +1,1 @@
-/home/loongkuan/.zsh//runcoms/zlogout
+/home/lklee/dot_files/zsh/runcoms/zlogout

@@ -7,7 +7,8 @@
         ("%section" 2)
         ("%subsection" 3)
         ("%subsubsection" 4)
-        ("%paragraph" 5)))
+        ("%paragraph" 5)
+        ))
 
 ;; add font locking to the headers
 (font-lock-add-keywords
@@ -18,7 +19,8 @@
    ("^%section{\\(.*\\)}"       1 'font-latex-sectioning-2-face t)
    ("^%subsection{\\(.*\\)}"    1 'font-latex-sectioning-3-face t)
    ("^%subsubsection{\\(.*\\)}" 1 'font-latex-sectioning-4-face t)
-   ("^%paragraph{\\(.*\\)}"     1 'font-latex-sectioning-5-face t)))
+   ("^%paragraph{\\(.*\\)}"     1 'font-latex-sectioning-5-face t)
+   ))
 
 (eval-after-load 'outline
   '(progn

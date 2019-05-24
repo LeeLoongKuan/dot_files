@@ -43,14 +43,15 @@ Return the results of all forms as a list."
       (string             "#b6e63e")
       (gray-dark          "#999")
       (gray               "#bbb")
-      (sans-font          "Iosevka")
+      (sans-font          "Bitter")
       (serif-font         "Merriweather")
-      (et-font            "ETBembo")
+      (et-font            "Bitter")
       (sans-mono-font     "Iosevka")
       (serif-mono-font    "Verily Serif Mono"))
      (setq theming-modifications
            `(
              ,(eval-file "~/.emacs.d/private/themes/tufte.el")
+             ,(eval-file "~/.emacs.d/private/themes/rogue.el")
              ;,(eval-file "~/.emacs.d/private/themes/poet.el")
              )
            )

@@ -1,1 +1,1 @@
-/home/loongkuan/.zsh//runcoms/zshrc
+/home/lklee/dot_files/zsh/runcoms/zshrc

@@ -5,6 +5,7 @@
                             (interactive)
                             (spacemacs/toggle-vi-tilde-fringe-off)
                             (olivetti-mode 1)
+                            (setq olivetti-body-width 90)
                             (linum-mode 0)
                             (setq-local global-hl-line-mode nil)
                             ))

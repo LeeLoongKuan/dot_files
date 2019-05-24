@@ -65,6 +65,7 @@ values."
      neotree
      java
      kotlin
+     pdf
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -149,6 +150,7 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          spacemacs-light
+                         doom-molokai
                          ;poet
                          ;poet-dark-monochrome
                          )
@@ -348,7 +350,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  (setq fill-column 70)
+  (setq fill-column 65)
   (load-file "~/.emacs.d/private/themes/themes.el")
   (spacemacs/update-theme)
   (load-file "~/.emacs.d/private/elisp/outline-magic.el")
@@ -367,9 +369,9 @@ you should place your code here."
                             :enabled-for-modes prog-mode
                             :size-limit-kb 1000))
   (setq powerline-default-separator 'arrow)
-  (setq doc-view-ghostscript-program "gswin64c.exe")
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   (setq-default TeX-master nil)
+  (setq neo-theme 'icons)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -400,10 +402,11 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(doc-view-continuous t)
+ '(evil-want-Y-yank-to-eol nil)
  '(org-indent-indentation-per-level 1)
  '(package-selected-packages
    (quote
-    (mvn meghanada maven-test-mode kotlin-mode groovy-mode groovy-imports pcache gradle-mode flycheck-kotlin scala-mode company-emacs-eclim eclim zones ox-hugo ox-twbs olivetti poet-theme poet-theme-theme writeroom-mode visual-fill-column pandoc-mode ox-pandoc ht org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib biblio biblio-core unfill smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor lv diff-hl company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete spacemacs-theme ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (doom-themes zones ox-hugo ox-twbs olivetti poet-theme poet-theme-theme writeroom-mode visual-fill-column pandoc-mode ox-pandoc ht org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib biblio biblio-core unfill smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor lv diff-hl company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete spacemacs-theme ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -441,16 +444,16 @@ This function is called at the very end of Spacemacs initialization."
  '(org-date ((t (:family "Iosevka" :height 0.8))))
  '(org-document-info ((t (:height 1.2 :slant italic))))
  '(org-document-info-keyword ((t (:height 0.8 :foreground "#bbb"))))
- '(org-document-title ((t (:inherit nil :family "ETBembo" :height 1.7 :foreground "#1c1e1f" :underline nil))))
+ '(org-document-title ((t (:inherit nil :family "Bitter" :height 1.6 :foreground "#1c1e1f" :underline nil))))
  '(org-done ((t (nil))))
  '(org-ellipsis ((t (:underline nil :foreground "#525254"))))
- '(org-headline-done ((t (:family "ETBembo" :strike-through t))))
+ '(org-headline-done ((t (:family "Bitter" :strike-through t))))
  '(org-hide ((t (:foreground "#fbf8ef" :inherit fixed-pitch))))
  '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
- '(org-level-1 ((t (:inherit nil :family "ETBembo" :height 1.5 :weight normal :slant normal :foreground "#1c1e1f"))))
- '(org-level-2 ((t (:inherit nil :family "ETBembo" :weight normal :height 1.3 :slant italic :foreground "#1c1e1f"))))
- '(org-level-3 ((t (:inherit nil :family "ETBembo" :weight normal :slant italic :height 1.2 :foreground "#1c1e1f"))))
- '(org-level-4 ((t (:inherit nil :family "ETBembo" :weight normal :slant italic :height 1.1 :foreground "#1c1e1f"))))
+ '(org-level-1 ((t (:inherit nil :family "Bitter" :height 1.5 :weight normal :slant normal :foreground "#1c1e1f"))))
+ '(org-level-2 ((t (:inherit nil :family "Bitter" :weight normal :height 1.4 :slant italic :foreground "#1c1e1f"))))
+ '(org-level-3 ((t (:inherit nil :family "Bitter" :weight normal :slant italic :height 1.3 :foreground "#1c1e1f"))))
+ '(org-level-4 ((t (:inherit nil :family "Bitter" :weight normal :slant italic :height 1.2 :foreground "#1c1e1f"))))
  '(org-level-5 ((t (nil))))
  '(org-level-6 ((t (nil))))
  '(org-level-7 ((t (nil))))
@@ -471,5 +474,5 @@ This function is called at the very end of Spacemacs initialization."
  '(powerline-active2 ((t (:background "#fbf8ef"))))
  '(powerline-inactive1 ((t (:background "#fbf8ef"))))
  '(powerline-inactive2 ((t (:background "#fbf8ef"))))
- '(variable-pitch ((t (:family "ETBembo" :background nil :foreground "#1c1e1f" :height 1.6)))))
+ '(variable-pitch ((t (:family "Bitter" :background nil :foreground "#1c1e1f" :height 1.2)))))
 )

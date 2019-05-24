@@ -1,5 +1,7 @@
 *~
 vim/backups/
+vim/\.vim
+zsh/.z*
 zsh/.zhistory
 zsh/.zcompdump
 zsh/.zcompdump.zwc

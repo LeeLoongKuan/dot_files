@@ -3,7 +3,7 @@
    :family ,et-font
             :background nil
             :foreground ,bg-dark
-            :height 1.6
+            :height 1.2
    )
   (fringe :background ,bg-white :foreground ,bg-white)
   (header-line
@@ -46,7 +46,7 @@
  (org-document-title
   :inherit nil
             :family ,et-font
-            :height 1.7
+            :height 1.6
             :foreground ,bg-dark
             :underline nil
   )
@@ -65,7 +65,7 @@
    :inherit nil
              :family ,et-font
              :weight normal
-             :height 1.3
+             :height 1.4
              :slant italic
              :foreground ,bg-dark)
   (org-level-3
@@ -73,14 +73,14 @@
              :family ,et-font
              :weight normal
              :slant italic
-             :height 1.2
+             :height 1.3
              :foreground ,bg-dark)
   (org-level-4
    :inherit nil
              :family ,et-font
              :weight normal
              :slant italic
-             :height 1.1
+             :height 1.2
              :foreground ,bg-dark)
   (org-level-5 nil)
   (org-level-6 nil)

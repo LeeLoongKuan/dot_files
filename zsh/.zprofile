@@ -1,1 +1,1 @@
-/home/loongkuan/.zsh//runcoms/zprofile
+/home/lklee/dot_files/zsh/runcoms/zprofile

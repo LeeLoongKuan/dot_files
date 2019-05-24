@@ -1,1 +1,1 @@
-/home/loongkuan/.zsh//runcoms/zlogin
+/home/lklee/dot_files/zsh/runcoms/zlogin
